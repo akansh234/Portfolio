@@ -399,6 +399,128 @@
                 font-size: 18px;
             }
         }
+        projects {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffd700;
+}
+
+.projects p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #111;
+    border: 1px solid #ffd700;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: #ffd700;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.project-card h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.project-card:hover h3 {
+    color: #000;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* ===== CERTIFICATES SECTION ===== */
+.certificates {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.certificates h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffd700;
+}
+
+.certificates p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background-color: #111;
+    border: 1px solid #ffd700;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+    background-color: #ffd700;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.certificate-card img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #ffd700;
+    margin-bottom: 15px;
+}
+
+.certificate-card h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.certificate-card:hover h3 {
+    color: #000;
+}
+
+.certificate-card a {
+    text-decoration: none;
+    color: #ffd700;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.certificate-card a:hover {
+    color: #000;
+}
     </style>
 </head>
 <body>
