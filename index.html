@@ -403,33 +403,39 @@
 </head>
 <body>
     <div class="container">
-        <nav class="nav">
-            <ul>
+        <div class="container">
+            <nav class="nav">
+              <ul>
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About Me</a></li>
                 <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+                <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" onclick="showPage('certificates')">Certificates</a></li>
                 <li><a href="#" onclick="showPage('goals')">Future Goals</a></li>
                 <li><a href="#" onclick="showPage('resume')">Resume</a></li>
-                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-            </ul>
-        </nav>
-        <!-- Mobile-specific bars button and nav -->
-        <div class="hamburger" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <nav class="mobile-nav" id="mobile-nav">
-            <div class="close-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-times"></i>
-            </div>
-            <ul>
-                <li><a href="#" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" onclick="showPage('about')">About Me</a></li>
-                <li><a href="#" onclick="showPage('skills')">Skills</a></li>
-                <li><a href="#" onclick="showPage('goals')">Future Goals</a></li>
-                <li><a href="#" onclick="showPage('resume')">Resume</a></li>
-                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-            </ul>
-        </nav>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <div class="close-btn" onclick="toggleMobileMenu()">
+        <i class="fas fa-times"></i>
+      </div>
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About Me</a></li>
+        <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+        <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+        <li><a href="#" onclick="showPage('certificates')">Certificates</a></li>
+        <li><a href="#" onclick="showPage('goals')">Future Goals</a></li>
+        <li><a href="#" onclick="showPage('resume')">Resume</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </nav>
         <div class="content">
             <div id="home" class="page home active">
                 <div class="home-left">
@@ -474,6 +480,26 @@
 Through continuous learning and practical experience in areas like deep learning, natural language processing, and data analytics, I aim to contribute to large-scale machine learning projects and cloud-based AI services. My focus is on developing scalable, efficient, and ethical AI models that make technology smarter and more human-centered.
 I’m committed to honing my skills, gaining hands-on project experience, and staying updated with the latest ML frameworks and Amazon Web Services (AWS) technologies to achieve this goal.</p>
             </div>
+                
+            <div id="projects" class="page projects">
+        <h2>Projects</h2>
+        <p>Here are some of my key projects related to AI and ML:</p>
+        <ul style="list-style:none; padding:0; font-size:18px;">
+          <li><strong>1. House Price Prediction:</strong> Built a predictive model using Linear Regression and Random Forest to estimate property prices based on key features.</li>
+          <li><strong>2. :Small Project front Page Clone Of Spotify</strong> This is Basic Poject Developed Using Html And Css .</li>
+          <li><strong>3. Portfolio Website:</strong> Designed this personal website using HTML, CSS, and JavaScript to showcase my skills and projects.</li>
+        </ul>
+      </div>
+
+      <!-- Certificates -->
+      <div id="certificates" class="page certificates">
+        <h2>Certificates</h2>
+        <p>Below are some of my certifications:</p>
+        <ul style="list-style:none; padding:0; font-size:18px;">
+          <li><strong>1. Python for Data Science</strong> – Code With Harry</li>
+          <li><strong>2. English </strong> – IBM</li>
+          <li><strong>3. SQL and Database Design</strong> – Udemy</li>
+        </ul>
             <div id="resume" class="page resume">
                 <h2>Resume</h2>
                 <p>Download my resume here: <a href="Resume.pdf" download="Resume.pdf" style="color: #ffd700;">Resume.pdf</a></p>
