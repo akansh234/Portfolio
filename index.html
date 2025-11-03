@@ -400,86 +400,117 @@
             }
         }
         /* ===== PROJECTS SECTION (New Design) ===== */
+/* ===== PROJECTS SECTION ===== */
 .projects {
-    padding: 100px 50px;
-    background-color: #0b0b0b;
-    text-align: center;
+  padding: 100px 50px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
 }
 
 .projects h2 {
-    font-size: 36px;
-    color: #ffd700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 30px;
 }
 
-.projects p {
-    color: #ccc;
-    font-size: 18px;
-    margin-bottom: 50px;
+.projects > p {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-/* Project Cards Layout */
+/* Project List Layout */
 .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    justify-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Project Card Style */
+/* Individual Project Cards */
 .project-card {
-    background: linear-gradient(145deg, #111, #1a1a1a);
-    border: 1px solid #ffd700;
-    border-radius: 15px;
-    padding: 25px;
-    width: 100%;
-    max-width: 350px;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
-    transition: all 0.4s ease;
-    text-align: left;
+  background-color: #111;
+  border: 1px solid #ffd700;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-    border-color: #ffea00;
+  background-color: #222;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
 }
 
 /* Project Title */
 .project-card h3 {
-    color: #ffd700;
-    font-size: 22px;
-    margin-bottom: 10px;
+  color: #ffd700;
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ffd700;
+  padding-bottom: 8px;
 }
 
-/* Project Description */
+/* Project Text */
 .project-card p {
-    color: #aaa;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.project-card p strong {
+  color: #fff;
 }
 
 /* Project Link Button */
 .project-card a {
-    display: inline-block;
-    padding: 8px 18px;
-    background-color: #ffd700;
-    color: #000;
-    font-weight: 600;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  display: inline-block;
+  background-color: #ffd700;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .project-card a:hover {
-    background-color: #fff200;
-    transform: scale(1.05);
+  background-color: #fff;
+  color: #000;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 20px;
+  }
+  .projects h2 {
+    font-size: 28px;
+  }
+  .projects > p {
+    font-size: 16px;
+  }
+  .project-card {
+    padding: 20px;
+  }
+  .project-card h3 {
+    font-size: 20px;
+  }
+  .project-card p {
+    font-size: 14px;
+  }
+}
+
 
 
 /* ===== CERTIFICATES SECTION ===== */
@@ -632,30 +663,39 @@ I’m committed to honing my skills, gaining hands-on project experience, and st
             </div>
                 
 <!-- ===== Projects Section ===== -->
+<!-- ===== Projects Section ===== -->
 <div id="projects" class="page projects">
   <h2>Projects</h2>
-  <p>Some of my recent works showcasing my skills and creativity:</p>
+
+  <!-- Intro Paragraph -->
+  <p>
+    I enjoy working on projects that combine creativity, technology, and problem-solving. 
+    Each project below reflects my journey in exploring different domains of development — 
+    from building responsive websites to analyzing data and creating intelligent machine learning models. 
+    My goal is to use these skills to craft solutions that make a real-world impact.
+  </p>
 
   <div class="project-list">
+    <!-- Project 1 -->
     <div class="project-card">
       <h3>Portfolio Website</h3>
-      <p>A personal portfolio built using HTML, CSS, and JavaScript to showcase my projects and skills.</p>
+      <p><strong>About Project:</strong> A personal portfolio website designed using HTML, CSS, and JavaScript. It showcases my skills, projects, and contact information in a clean, responsive layout.</p>
+      <p><strong>Tools Used:</strong> HTML, CSS, JavaScript</p>
+      <p><strong>Highlights:</strong> Fully responsive, modern design, smooth navigation between pages.</p>
       <a href="https://example.com/portfolio" target="_blank">View Project</a>
     </div>
 
+    <!-- Project 2 -->
     <div class="project-card">
       <h3>Data Analysis Dashboard</h3>
-      <p>An interactive dashboard using Python, Pandas, and Matplotlib for data visualization.</p>
+      <p><strong>About Project:</strong> Built an interactive dashboard to visualize and analyze sales and performance data. It uses data manipulation and visualization techniques for better decision-making.</p>
+      <p><strong>Tools Used:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+      <p><strong>Highlights:</strong> Real-time graphs, data filtering, and statistical insights.</p>
       <a href="https://github.com/akansh/data-dashboard" target="_blank">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Machine Learning Model</h3>
-      <p>Developed a predictive ML model using Scikit-learn for real-world dataset analysis.</p>
-      <a href="https://github.com/akansh/ml-model" target="_blank">View Project</a>
     </div>
   </div>
 </div>
+
 
       <!-- Certificates -->
       <div id="certificates" class="page certificates">
