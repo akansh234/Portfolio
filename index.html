@@ -399,115 +399,88 @@
                 font-size: 18px;
             }
         }
-        projects {
-    padding: 100px 50px;
-    text-align: center;
-}
-
-.projects h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #ffd700;
-}
-
-.projects p {
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-.project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background-color: #111;
-    border: 1px solid #ffd700;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: left;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    background-color: #ffd700;
-    color: #000;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-}
-
-.project-card h3 {
-    color: #ffd700;
-    margin-bottom: 10px;
-}
-
-.project-card:hover h3 {
-    color: #000;
-}
-
-.project-card p {
-    font-size: 16px;
-    color: #ccc;
-}
-      /* ===== PROJECTS SECTION ===== */
+        /* ===== PROJECTS SECTION (New Design) ===== */
 .projects {
     padding: 100px 50px;
+    background-color: #0b0b0b;
     text-align: center;
 }
 
 .projects h2 {
     font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 30px;
     color: #ffd700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .projects p {
+    color: #ccc;
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
+/* Project Cards Layout */
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
+/* Project Card Style */
 .project-card {
-    background-color: #111;
+    background: linear-gradient(145deg, #111, #1a1a1a);
     border: 1px solid #ffd700;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+    transition: all 0.4s ease;
     text-align: left;
-    transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    background-color: #ffd700;
-    color: #000;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+    border-color: #ffea00;
 }
 
+/* Project Title */
 .project-card h3 {
     color: #ffd700;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
-.project-card:hover h3 {
-    color: #000;
+/* Project Description */
+.project-card p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-.project-card p {
-    font-size: 16px;
-    color: #ccc;
+/* Project Link Button */
+.project-card a {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #ffd700;
+    color: #000;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
+
+.project-card a:hover {
+    background-color: #fff200;
+    transform: scale(1.05);
+}
+
 
 /* ===== CERTIFICATES SECTION ===== */
 .certificates {
@@ -658,15 +631,31 @@ Through continuous learning and practical experience in areas like deep learning
 I’m committed to honing my skills, gaining hands-on project experience, and staying updated with the latest ML frameworks and Amazon Web Services (AWS) technologies to achieve this goal.</p>
             </div>
                 
-            <div id="projects" class="page projects">
-        <h2>Projects</h2>
-        <p>Here are some of my key projects related to AI and ML:</p>
-        <ul style="list-style:none; padding:0; font-size:18px;">
-          <li><strong>1. House Price Prediction:</strong> Built a predictive model using Linear Regression and Random Forest to estimate property prices based on key features.</li>
-          <li><strong>2. :Small Project front Page Clone Of Spotify</strong> This is Basic Poject Developed Using Html And Css .</li>
-          <li><strong>3. Portfolio Website:</strong> Designed this personal website using HTML, CSS, and JavaScript to showcase my skills and projects.</li>
-        </ul>
-      </div>
+<!-- ===== Projects Section ===== -->
+<div id="projects" class="page projects">
+  <h2>Projects</h2>
+  <p>Some of my recent works showcasing my skills and creativity:</p>
+
+  <div class="project-list">
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built using HTML, CSS, and JavaScript to showcase my projects and skills.</p>
+      <a href="https://example.com/portfolio" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Data Analysis Dashboard</h3>
+      <p>An interactive dashboard using Python, Pandas, and Matplotlib for data visualization.</p>
+      <a href="https://github.com/akansh/data-dashboard" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Machine Learning Model</h3>
+      <p>Developed a predictive ML model using Scikit-learn for real-world dataset analysis.</p>
+      <a href="https://github.com/akansh/ml-model" target="_blank">View Project</a>
+    </div>
+  </div>
+</div>
 
       <!-- Certificates -->
       <div id="certificates" class="page certificates">
