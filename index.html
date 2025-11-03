@@ -515,71 +515,125 @@
 
 /* ===== CERTIFICATES SECTION ===== */
 .certificates {
-    padding: 100px 50px;
-    text-align: center;
+  padding: 100px 50px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
 }
 
 .certificates h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #ffd700;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 30px;
 }
 
-.certificates p {
-    font-size: 18px;
-    margin-bottom: 40px;
+.certificates > p {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-.certificate-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* Certificate Cards Layout */
+.certificate-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Individual Certificate Card */
 .certificate-card {
-    background-color: #111;
-    border: 1px solid #ffd700;
-    border-radius: 10px;
-    padding: 20px;
-    transition: all 0.3s ease;
+  background-color: #111;
+  border: 1px solid #ffd700;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
 .certificate-card:hover {
-    background-color: #ffd700;
-    color: #000;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  background-color: #222;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
 }
 
+/* Certificate Image */
 .certificate-card img {
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #ffd700;
-    margin-bottom: 15px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
+.certificate-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Text and Link */
 .certificate-card h3 {
-    color: #ffd700;
-    margin-bottom: 10px;
+  color: #ffd700;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-.certificate-card:hover h3 {
-    color: #000;
+.certificate-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 10px;
 }
 
 .certificate-card a {
-    text-decoration: none;
-    color: #ffd700;
-    font-weight: 600;
-    transition: color 0.3s ease;
+  display: inline-block;
+  background-color: #ffd700;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .certificate-card a:hover {
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certificates {
+    padding: 60px 20px;
+  }
+
+  .certificates h2 {
+    font-size: 28px;
+  }
+
+  .certificates > p {
+    font-size: 16px;
+  }
+
+  .certificate-card {
+    padding: 15px;
+  }
+
+  .certificate-card h3 {
+    font-size: 20px;
+  }
+
+  .certificate-card p {
+    font-size: 14px;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -663,7 +717,6 @@ I’m committed to honing my skills, gaining hands-on project experience, and st
             </div>
                 
 <!-- ===== Projects Section ===== -->
-<!-- ===== Projects Section ===== -->
 <div id="projects" class="page projects">
   <h2>Projects</h2>
 
@@ -697,15 +750,37 @@ I’m committed to honing my skills, gaining hands-on project experience, and st
 </div>
 
 
-      <!-- Certificates -->
-      <div id="certificates" class="page certificates">
-        <h2>Certificates</h2>
-        <p>Below are some of my certifications:</p>
-        <ul style="list-style:none; padding:0; font-size:18px;">
-          <li><strong>1. Python for Data Science</strong> – Code With Harry</li>
-          <li><strong>2. English </strong> – IBM</li>
-          <li><strong>3. SQL and Database Design</strong> – Udemy</li>
-        </ul>
+      <!-- ===== Certificates Section ===== -->
+<div id="certificates" class="page certificates">
+  <h2>Certificates</h2>
+
+  <p>
+    I’ve earned certifications that demonstrate my continuous learning and expertise in 
+    Artificial Intelligence, Data Science, and programming. Each certificate reflects my 
+    dedication to building a strong foundation in technology and data-driven development.
+  </p>
+
+  <div class="certificate-list">
+    <!-- Certificate 1 -->
+    <div class="certificate-card">
+      <img src="certificate1.png" alt="Data Science - CodeWithHarry">
+      <h3>Data Science Certificate</h3>
+      <p><strong>Issued by:</strong> CodeWithHarry</p>
+      <p><strong>Description:</strong> Completed a comprehensive Data Science course covering Python, data analysis, and machine learning fundamentals.</p>
+      <a href="https://example.com/data-science-certificate" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="certificate-card">
+      <img src="certificate2.png" alt="Machine Learning - Coursera">
+      <h3>Machine Learning Specialization</h3>
+      <p><strong>Issued by:</strong> Coursera</p>
+      <p><strong>Description:</strong> Learned key ML algorithms, supervised/unsupervised learning, and model optimization techniques.</p>
+      <a href="https://example.com/ml-certificate" target="_blank">View Certificate</a>
+    </div>
+  </div>
+</div>
+
             <div id="resume" class="page resume">
                 <h2>Resume</h2>
                 <p>Download my resume here: <a href="Resume.pdf" download="Resume.pdf" style="color: #ffd700;">Resume.pdf</a></p>
