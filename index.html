@@ -7,11 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #000;
@@ -19,385 +15,148 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
+        .container { display: flex; min-height: 100vh; }
         .nav {
-            width: 250px;
-            background-color: #000;
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-right: 1px solid #ffd700;
-            z-index: 10;
+            width: 250px; background-color: #000; position: fixed; left: 0; top: 0;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            border-right: 1px solid #ffd700; z-index: 10;
         }
-        .nav ul {
-            list-style: none;
-            text-align: center;
-        }
-        .nav li {
-            margin: 20px 0;
-        }
+        .nav ul { list-style: none; text-align: center; }
+        .nav li { margin: 20px 0; }
         .nav a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 400;
-            transition: color 0.3s ease;
+            text-decoration: none; color: #fff; font-size: 18px; font-weight: 400; transition: color 0.3s ease;
         }
-        .nav a:hover {
-            color: #ffd700;
-        }
+        .nav a:hover { color: #ffd700; }
         .hamburger {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: #ffd700;
-            cursor: pointer;
-            z-index: 15;
-            background-color: #000;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ffd700;
+            display: none; position: fixed; top: 20px; right: 20px;
+            font-size: 24px; color: #ffd700; cursor: pointer; z-index: 15;
+            background-color: #000; padding: 10px; border-radius: 5px; border: 1px solid #ffd700;
         }
         .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            border-top: 1px solid #ffd700;
-            z-index: 14;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-            position: relative; /* Added for close button positioning */
+            display: none; position: fixed; top: 70px; left: 0; width: 100%;
+            background-color: #000; border-top: 1px solid #ffd700; z-index: 14;
+            flex-direction: column; align-items: center; padding: 20px 0; position: relative;
         }
-        .mobile-nav.show {
-            display: flex;
-        }
+        .mobile-nav.show { display: flex; }
         .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 24px;
-            color: #ffd700;
-            cursor: pointer;
-            transition: color 0.3s ease;
+            position: absolute; top: 10px; right: 20px; font-size: 24px;
+            color: #ffd700; cursor: pointer; transition: color 0.3s ease;
         }
-        .close-btn:hover {
-            color: #fff;
-        }
-        .mobile-nav ul {
-            list-style: none;
-            text-align: center;
-            width: 100%;
-        }
-        .mobile-nav li {
-            margin: 20px 0; /* Increased space between nav options */
-        }
+        .close-btn:hover { color: #fff; }
+        .mobile-nav ul { list-style: none; text-align: center; width: 100%; }
+        .mobile-nav li { margin: 20px 0; }
         .mobile-nav a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 400;
-            transition: color 0.3s ease;
+            text-decoration: none; color: #fff; font-size: 18px; font-weight: 400; transition: color 0.3s ease;
         }
-        .mobile-nav a:hover {
-            color: #ffd700;
-        }
-        .content {
-            margin-left: 250px;
-            width: calc(100% - 250px);
-            padding: 0;
-        }
-        .page {
-            display: none;
-            min-height: 100vh;
-        }
-        .page.active {
-            display: block;
-        }
+        .mobile-nav a:hover { color: #ffd700; }
+        .content { margin-left: 250px; width: calc(100% - 250px); padding: 0; }
+        .page { display: none; min-height: 100vh; }
+        .page.active { display: block; }
         .home {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            height: 100vh;
+            display: grid; grid-template-columns: 1fr 1fr; height: 100vh;
         }
         .home-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 50px;
-            background-color: #000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 50px; background-color: #000;
         }
-        .home-left h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-        .home-left p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+        .home-left h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; color: #ffd700; }
+        .home-left p { font-size: 20px; margin-bottom: 30px; text-align: center; }
         .btn {
-            background-color: #ffd700;
-            color: #000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            background-color: #ffd700; color: #000; padding: 15px 30px; text-decoration: none;
+            font-weight: 700; border-radius: 5px; transition: background-color 0.3s ease;
         }
-        .btn:hover {
-            background-color: #fff;
+        .btn:hover { background-color: #fff; }
+        .home-right { display: flex; justify-content: center; align-items: center; padding: 50px; }
+        .portrait { width: 100%; max-width: 400px; border: 2px solid #ffd700; }
+        .portrait img { width: 100%; height: auto; object-fit: cover; }
+
+        /* Section styles */
+        .about, .skills, .resume, .contact, .goals, .projects, .certificates {
+            padding: 100px 50px; text-align: center;
         }
-        .home-right {
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px;
-        }
-        .portrait {
-            width: 100%; /* Changed to full width */
-            max-width: 400px; /* Optional max-width to prevent it from being too large */
-            height: auto; /* Adjusted for responsiveness */
-            background-color: #333;
-            border: 2px solid #ffd700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 18px;
-        }
-        .portrait img {
-            width: 100%;
-            height: auto;
-            object-fit: cover; /* Ensures the image covers the area without distortion */
-        }
-        .about, .skills, .resume, .contact, .goals {
-            padding: 100px 50px;
-            text-align: center;
-        }
-        .about h2, .skills h2, .resume h2, .contact h2, .goals h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: #ffd700;
-        }
-        .about p, .skills p, .resume p, .goals p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .skills .skill-category {
-            margin-bottom: 40px;
-        }
-        .skills .skill-category h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
+        h2 { font-size: 36px; font-weight: 700; margin-bottom: 30px; color: #ffd700; }
+        p { font-size: 18px; margin-bottom: 20px; }
+
+        /* Skills Section */
+        .skill-category { margin-bottom: 40px; }
+        .skill-category h3 { font-size: 24px; color: #ffd700; margin-bottom: 20px; }
         .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px; max-width: 800px; margin: 0 auto;
         }
         .skill-box {
-            background-color: #333;
-            border: 1px solid #ffd700;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 400;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            background-color: #333; border: 1px solid #ffd700; border-radius: 8px;
+            padding: 20px; text-align: center; font-size: 16px;
+            transition: all 0.3s ease; cursor: pointer;
         }
         .skill-box:hover {
-            background-color: #ffd700;
-            color: #000;
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+            background-color: #ffd700; color: #000; transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(255,215,0,0.3);
         }
-        .contact form {
-            max-width: 400px;
-            margin: 0 auto;
+
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; max-width: 1000px; margin: 0 auto;
         }
+        .certificate-box {
+            background-color: #111; border: 1px solid #ffd700;
+            border-radius: 10px; padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .certificate-box:hover {
+            background-color: #ffd700; color: #000;
+            transform: scale(1.05);
+        }
+        .certificate-box h3 { margin-bottom: 10px; color: #ffd700; }
+        .certificate-box:hover h3 { color: #000; }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; max-width: 1000px; margin: 0 auto;
+        }
+        .project-card {
+            background-color: #111; border: 1px solid #ffd700;
+            border-radius: 10px; padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            background-color: #ffd700; color: #000;
+            transform: scale(1.05);
+        }
+        .project-card h3 { color: #ffd700; margin-bottom: 10px; }
+        .project-card:hover h3 { color: #000; }
+        .project-card a {
+            color: #ffd700; text-decoration: none; font-weight: 700;
+        }
+        .project-card:hover a { color: #000; }
+
+        /* Contact section */
+        .contact form { max-width: 400px; margin: 0 auto; }
         .contact input, .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: #333;
-            border: 1px solid #ffd700;
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
+            width: 100%; padding: 10px; margin-bottom: 20px;
+            background-color: #333; border: 1px solid #ffd700; color: #fff;
         }
         .contact button {
-            background-color: #ffd700;
-            color: #000;
-            padding: 15px 30px;
-            border: none;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            background-color: #ffd700; color: #000;
+            padding: 15px 30px; border: none; font-weight: 700;
+            cursor: pointer; transition: background-color 0.3s ease;
         }
-        .contact button:hover {
-            background-color: #fff;
-        }
-        .contact-icons {
-            margin-top: 50px;
-        }
+        .contact button:hover { background-color: #fff; }
         .contact-icons a {
-            color: #ffd700;
-            margin: 0 20px;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            color: #ffd700; margin: 0 15px; font-size: 24px; text-decoration: none;
         }
-        .contact-icons a:hover {
-            color: #fff;
-        }
+        .contact-icons a:hover { color: #fff; }
 
-        /* Responsive CSS for Tablets and Phones */
-        @media (max-width: 1024px) {
-            .nav {
-                width: 200px;
-            }
-            .content {
-                margin-left: 200px;
-                width: calc(100% - 200px);
-            }
-            .home-left h1 {
-                font-size: 42px;
-            }
-            .home-left p {
-                font-size: 18px;
-            }
-            .portrait {
-                width: 100%;
-                max-width: 350px;
-            }
-            .about h2, .skills h2, .resume h2, .contact h2, .goals h2 {
-                font-size: 32px;
-            }
-            .about p, .skills p, .resume p, .goals p {
-                font-size: 16px;
-            }
-            .skill-box {
-                font-size: 14px;
-                padding: 15px;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav {
-                display: none; /* Hide the sidebar nav in mobile */
-            }
-            .hamburger {
-                display: block; /* Show the bars button in mobile */
-            }
-            .content {
-                margin-left: 0;
-                width: 100%;
-            }
-            .home {
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr 1fr;
-            }
-            .home-left, .home-right {
-                padding: 20px;
-            }
-            .home-left h1 {
-                font-size: 32px;
-            }
-            .home-left p {
-                font-size: 16px;
-            }
-            .portrait {
-                width: 100%;
-                max-width: 300px;
-            }
-            .about, .skills, .resume, .contact, .goals {
-                padding: 50px 20px;
-            }
-            .about h2, .skills h2, .resume h2, .contact h2, .goals h2 {
-                font-size: 28px;
-            }
-            .about p, .skills p, .resume p, .goals p {
-                font-size: 14px;
-            }
-            .skill-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 15px;
-            }
-            .skill-box {
-                font-size: 12px;
-                padding: 12px;
-            }
-            .contact form {
-                max-width: 300px;
-            }
-            .contact-icons a {
-                margin: 0 10px;
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .home-left h1 {
-                font-size: 28px;
-            }
-            .home-left p {
-                font-size: 14px;
-            }
-            .btn {
-                padding: 12px 24px;
-                font-size: 14px;
-            }
-            .portrait {
-                width: 100%;
-                max-width: 250px;
-            }
-            .about h2, .skills h2, .resume h2, .contact h2, .goals h2 {
-                font-size: 24px;
-            }
-            .about p, .skills p, .resume p, .goals p {
-                font-size: 12px;
-            }
-            .skill-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 10px;
-            }
-            .skill-box {
-                font-size: 10px;
-                padding: 10px;
-            }
-            .contact input, .contact textarea {
-                padding: 8px;
-                font-size: 14px;
-            }
-            .contact button {
-                padding: 12px 24px;
-                font-size: 14px;
-            }
-            .contact-icons a {
-                font-size: 18px;
-            }
+            .nav { display: none; }
+            .hamburger { display: block; }
+            .content { margin-left: 0; width: 100%; }
+            .home { grid-template-columns: 1fr; }
+            .about, .skills, .projects, .certificates, .resume, .contact, .goals { padding: 50px 20px; }
+            h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -408,29 +167,34 @@
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About Me</a></li>
                 <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+                <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" onclick="showPage('certificates')">Certificates</a></li>
                 <li><a href="#" onclick="showPage('goals')">Future Goals</a></li>
                 <li><a href="#" onclick="showPage('resume')">Resume</a></li>
                 <li><a href="#" onclick="showPage('contact')">Contact</a></li>
             </ul>
         </nav>
-        <!-- Mobile-specific bars button and nav -->
-        <div class="hamburger" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
+
+        <!-- Hamburger for mobile -->
+        <div class="hamburger" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
+
+        <!-- Mobile navigation -->
         <nav class="mobile-nav" id="mobile-nav">
-            <div class="close-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-times"></i>
-            </div>
+            <div class="close-btn" onclick="toggleMobileMenu()"><i class="fas fa-times"></i></div>
             <ul>
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About Me</a></li>
                 <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+                <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" onclick="showPage('certificates')">Certificates</a></li>
                 <li><a href="#" onclick="showPage('goals')">Future Goals</a></li>
                 <li><a href="#" onclick="showPage('resume')">Resume</a></li>
                 <li><a href="#" onclick="showPage('contact')">Contact</a></li>
             </ul>
         </nav>
+
         <div class="content">
+            <!-- Existing Sections -->
             <div id="home" class="page home active">
                 <div class="home-left">
                     <h1>Hi There! I’m Akansh Srivastava</h1>
@@ -441,10 +205,12 @@
                     <div class="portrait"><img src="Akansh Photo.jpg" alt="Akansh Srivastava"></div>
                 </div>
             </div>
+
             <div id="about" class="page about">
                 <h2>About Me</h2>
-                <p>I am Akansh Srivastava, currently pursuing my MCA with a specialization in Artificial Intelligence and Machine Learning. My passion lies in exploring the depths of AI and ML to create impactful solutions. I enjoy working on projects that involve data analysis, predictive modeling, and intelligent systems. Outside of academics, I am keen on continuous learning and contributing to the tech community.</p>
+                <p>I am Akansh Srivastava, currently pursuing MCA in Artificial Intelligence and Machine Learning. My passion lies in creating impactful AI solutions through data and algorithms.</p>
             </div>
+
             <div id="skills" class="page skills">
                 <h2>Skills</h2>
                 <div class="skill-category">
@@ -463,30 +229,62 @@
                     <div class="skill-grid">
                         <div class="skill-box">Problem Solving</div>
                         <div class="skill-box">Analytical</div>
-                        <div class="skill-box">Communication</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
-                    <div class="skill-grid">
-                        <div class="skill-box">Numpy</div>
-                        <div class="skill-box">Pandas</div>
-                        <div class="skill-box">Matplotlib</div>
-                        <div class="skill-box">Seaborn</div>
+                        <div class="skill-box">Adaptability</div>
                     </div>
                 </div>
             </div>
+
+            <!-- New Projects Section -->
+            <div id="projects" class="page projects">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>1. AI Resume Screening System</h3>
+                        <p>Developed a machine learning model to automate resume screening using NLP and TF-IDF vectorization.</p>
+                        <a href="https://github.com/akansh234" target="_blank">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>2. Student Performance Predictor</h3>
+                        <p>Built a predictive model using Python and Scikit-Learn to estimate student success rates.</p>
+                        <a href="https://github.com/akansh234" target="_blank">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>3. Portfolio Website</h3>
+                        <p>Created a fully responsive personal portfolio using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+                        <a href="#">This Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Certificates Section -->
+            <div id="certificates" class="page certificates">
+                <h2>Certificates</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-box">
+                        <h3>Machine Learning - Coursera</h3>
+                        <p>Completed by Andrew Ng (Stanford University). Gained expertise in supervised and unsupervised ML.</p>
+                    </div>
+                    <div class="certificate-box">
+                        <h3>Python for Data Science - IBM</h3>
+                        <p>Learned data manipulation, visualization, and analysis using Python and Pandas.</p>
+                    </div>
+                    <div class="certificate-box">
+                        <h3>AI Fundamentals - Microsoft</h3>
+                        <p>Gained hands-on experience with Azure AI services and machine learning concepts.</p>
+                    </div>
+                </div>
+            </div>
+
             <div id="goals" class="page goals">
                 <h2>Future Goals</h2>
-                <p>My ultimate career goal is to become a Machine Learning Engineer at Amazon, where I can work on innovative AI-driven solutions that impact millions of people globally. I aspire to build intelligent systems that enhance user experiences, improve decision-making, and push the boundaries of automation and data science.
-Through continuous learning and practical experience in areas like deep learning, natural language processing, and data analytics, I aim to contribute to large-scale machine learning projects and cloud-based AI services. My focus is on developing scalable, efficient, and ethical AI models that make technology smarter and more human-centered.
-I’m committed to honing my skills, gaining hands-on project experience, and staying updated with the latest ML frameworks and Amazon Web Services (AWS) technologies to achieve this goal.</p>
+                <p>My goal is to become a Machine Learning Engineer at Amazon, contributing to AI systems that improve millions of lives globally.</p>
             </div>
+
             <div id="resume" class="page resume">
                 <h2>Resume</h2>
-                <p>Download my resume here: <a href="Resume.pdf" download="Resume.pdf" style="color: #ffd700;">Resume.pdf</a></p>
-                <p>Placeholder for resume details or embed.</p>
+                <p>Download my resume here: <a href="Resume.pdf" download style="color: #ffd700;">Resume.pdf</a></p>
             </div>
+
             <div id="contact" class="page contact">
                 <h2>Contact</h2>
                 <form>
@@ -499,17 +297,17 @@ I’m committed to honing my skills, gaining hands-on project experience, and st
                     <a href="mailto:akansh.srivastava234@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/akansh-srivastava-50477b36a" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/akansh234" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="tel:+91 9336412742"><i class="fas fa-phone"></i></a>
+                    <a href="tel:+919336412742"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
         </div>
     </div>
+
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
-            // Close the mobile menu after selecting a page
             document.getElementById('mobile-nav').classList.remove('show');
         }
 
